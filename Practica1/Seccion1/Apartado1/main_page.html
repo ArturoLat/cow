@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./static/styles/main_page.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="./static/images/logo_ub.jpg">
+  <title>UB Booking</title>
+</head>
+<body>
+    <div class="main-body">
+        <header class="header">
+            <h1>UB Booking</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hotels">Hoteles</a></li>
+                    <li><a href="#booking">Reservar</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="left">
+            <h2>Ofertas Especiales</h2>
+            <p>Descubre las mejores ofertas.</p>
+        </aside>
+        <section class="center">
+            <h2>Búsqueda de Hoteles</h2>
+            <form action="https://www.google.com/search" method="get" target="_blank">
+                <input type="text" name="q" placeholder="Buscar hotel" required>
+                <button type="submit">Buscar en Google</button>
+            </form>
+            <div class="hotel-listing">
+              <div class="hotel-entry">
+                  <img src="./static/images/hotel_vela.jpg" alt="Hotel W" class="hotel-image">
+                  <div class="hotel-info">
+                      <h3>W Barcelona</h3>
+                      <p class="hotel-location">Barcelona, España</p>
+                      <p class="hotel-detail">Zona: Ciutat Vella</p>
+                  </div>
+                  <div class="booking-button">
+                    <form action="https://www.google.com/search" method="get">
+                        <input type="hidden" name="q" value="W Barcelona">
+                        <button type="submit">Reservar</button>
+                    </form>
+                </div>
+              </div>
+              <div class="hotel-entry">
+                <img src="./static/images/hotel_mandarin.jpg" alt="Hotel Mandarin Oriental" class="hotel-image">
+                <div class="hotel-info">
+                    <h3>Hotel Mandarin Oriental</h3>
+                    <p class="hotel-location">Barcelona, España</p>
+                    <p class="hotel-detail">Zona: Passeig de Gracia</p>
+                </div>
+                <div class="booking-button">
+                  <form action="https://www.google.com/search" method="get">
+                      <input type="hidden" name="q" value="Hotel Mandarin Oriental">
+                      <button type="submit">Reservar</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="right">
+          <h2>Cliente</h2>
+          <form id="client-area-form">
+              <div class="form-group">
+                  <label for="client-name">Nombre:</label>
+                  <input type="text" id="client-name" name="client_name" required>
+              </div>
+              <div class="form-group">
+                  <label for="client-email">Email:</label>
+                  <input type="email" id="client-email" name="client_email" required>
+              </div>
+              <div class="form-group">
+                  <label for="client-password">Contraseña:</label>
+                  <input type="password" id="client-password" name="client_password" required>
+              </div>
+              <button type="submit">Enviar</button>
+          </form>
+        </aside>
+        <footer class="footer">
+            <p>&copy; 2024 Reservas de Hoteles. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
