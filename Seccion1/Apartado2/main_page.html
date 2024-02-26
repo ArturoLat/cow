@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-
     Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
-  <link href="./static/styles/main_page.css" rel="stylesheet" type="text/css" />
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-
     J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -26,24 +25,54 @@
   <!-- Cambio de "main-body" por bootstrap -->
   <div class="container-fluid">
     <!-- Cambio de "header" por bootstrap -->
-    <header class="text-center bg-dark text-white py-3 mb-3">
+    <!-- PY: Padding en Y | MB: Margen Botton -->
+    <header class="col-sm-12 text-center bg-dark text-white py-3 mb-3">
         <h1>UB Booking</h1>
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item"><a href="#hotels" class="nav-link text-white">Hoteles</a></li>
-                <li class="nav-item"><a href="#booking" class="nav-link text-white">Reservar</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link text-white">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-default justify-content-center" role="navigation">
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Hoteles
+            </button>
+            <div class="dropdown-menu">
+              <a href="#hotels" class="dropdown-item">Hoteles</a>
+              <a href="#booking" class="dropdown-item">Reservar</a>
+              <a href="#contact" class="dropdown-item">Contacto</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Another link</a>
+            </div>
+          </div>
         </nav>
     </header>
     <div class="row">
       <!-- Cambio de "left" por bootstrap -->
-        <aside class="col-md-3 mb-3">
+        <aside class="col-sm-12 col-md-3 mb-3">
             <h2>Ofertas Especiales</h2>
             <p>Descubre las mejores ofertas.</p>
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>Hotel</th>
+                  <th>Descuento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hotel Vela</td>
+                  <td>
+                    10% <img src='./static/images/descuento-image.png' alt='Descuento' class="img-fluid" style="width: 20px; height: 20px;">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hotel Mandarin Oriental</td>
+                  <td>
+                    20% <img src='./static/images/descuento-image.png' alt='Descuento' class="img-fluid" style="width: 20px; height: 20px;">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
         </aside>
         <!-- Cambio de "center" por bootstrap -->
-        <section class="col-md-6">
+        <section class="col-sm-12 col-md-6">
             <h2>Búsqueda de Hoteles</h2>
             <form action="https://www.google.com/search" method="get" target="_blank" class="input-group mb-3">
                 <input type="text" name="q" placeholder="Buscar hotel" class="form-control" required>
@@ -54,12 +83,20 @@
             <div class="hotel-listing">
               <!-- Cambio de "hotel-entry" por bootstrap -->
               <div class="media mb-4 p-3 bg-white shadow-sm">
-                <img src="./static/images/hotel_vela.jpg" alt="Hotel W" class="mr-3 hotel-image align-self-center">
+                <img src="./static/images/hotel_vela.jpg" alt="Hotel W" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
                 <div class="media-body">
                   <!-- Cambio de "hotel-info" por bootstrap -->
                   <h5 class="mt-0">W Barcelona</h5>
                   <p>Barcelona, España - Zona: Ciutat Vella</p>
-                  <form action="https://www.google.com/search" method="get">
+                  <form action="https://www.google.com/search" method="get" class="form-inline">
+                    <label for="personas-dropdown" class="mr-2">Personas:</label>
+                    <select class="custom-select mr-2" id="personas-dropdown">
+                        <option selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4 o más</option>
+                    </select>
                     <input type="hidden" name="q" value="W Barcelona">
                     <button type="submit" class="btn btn-primary">Reservar</button>
                   </form>
@@ -68,13 +105,21 @@
             </div>
             <div class="hotel-listing">
               <div class="media mb-4 p-3 bg-white shadow-sm">
-                <img src="./static/images/hotel_mandarin.jpg" alt="Hotel Mandarin Oriental" class="mr-3 hotel-image align-self-center">
+                <img src="./static/images/hotel_mandarin.jpg" alt="Hotel Mandarin Oriental" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
                 <!-- Cambio de "hotel-entry" por bootstrap -->
                 <div class="media-body">
                   <!-- Cambio de "hotel-info" por bootstrap -->
                   <h5 class="mt-0">Hotel Mandarin Oriental</h5>
                   <p>Barcelona, España - Zona: Passeig de Gracia</p>
-                  <form action="https://www.google.com/search" method="get">
+                  <form action="https://www.google.com/search" method="get" class="form-inline">
+                    <label for="personas-dropdown" class="mr-2">Personas:</label>
+                    <select class="custom-select mr-2" id="personas-dropdown">
+                        <option selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4 o más</option>
+                    </select>
                     <input type="hidden" name="q" value="Hotel Mandarin Oriental">
                     <button type="submit" class="btn btn-primary">Reservar</button>
                   </form>
@@ -83,7 +128,7 @@
             </div>
         </section>
         <!-- Cambio de "right" por bootstrap -->
-        <aside class="col-md-3 mb-3">
+        <aside class="col-sm-12 col-md-3 mb-3">
           <h2>Cliente</h2>
           <form id="client-area-form">
             <div class="form-group">
