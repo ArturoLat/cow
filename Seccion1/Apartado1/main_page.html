@@ -13,43 +13,43 @@
             <h1>UB Booking</h1>
             <nav>
                 <ul>
-                    <li><a href="#hotels">Hoteles</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
                     <li><a href="#booking">Reservar</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#contact">Contacte</a></li>
                 </ul>
             </nav>
         </header>
-        <aside class="left">
-            <h2>Ofertas Especiales</h2>
-            <p>Descubre las mejores ofertas.</p>
+        <div class="left">
+            <h2>Ofertes Especials</h2>
             <table>
-                <thead>
-                  <tr>
-                    <th>Hotel</th>
-                    <th>Descuento</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Hotel Vela</td>
-                    <td>
-                      10% <img src='./static/images/descuento-image.png' alt='Descuento' style="width: 20px; height: 20px;">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Hotel Mandarin Oriental</td>
-                    <td>
-                      20% <img src='./static/images/descuento-image.png' alt='Descuento'  style="width: 20px; height: 20px;">
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-        </aside>
-        <section class="center">
-            <h2>Búsqueda de Hoteles</h2>
+              <caption>Descubreix les millors ofertes</caption>
+              <thead>
+                <tr>
+                  <th>Hotel</th>
+                  <th>Descompte</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hotel Vela</td>
+                  <td>
+                    10% <img src='./static/images/descuento-image.png' alt='Descuento' style="width: 20px; height: 20px;">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hotel Mandarin Oriental</td>
+                  <td>
+                    20% <img src='./static/images/descuento-image.png' alt='Descuento'  style="width: 20px; height: 20px;">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <div class="center">
+            <h2>Busqueda d'Hotels</h2>
             <form action="https://www.google.com/search" method="get" target="_blank">
                 <input type="text" name="q" placeholder="Buscar hotel" required>
-                <button type="submit">Buscar en Google</button>
+                <button type="submit">Buscar a Google</button>
             </form>
             <div class="hotel-listing">
               <div class="hotel-entry">
@@ -60,7 +60,7 @@
                       <p class="hotel-detail">Zona: Ciutat Vella</p>
                   </div>
                   <div class="booking-button">
-                    <form action="https://www.google.com/search" method="get">
+                    <form action="https://www.google.com/search" method="get" target="_blank">
                         <input type="hidden" name="q" value="W Barcelona">
                         <button type="submit">Reservar</button>
                     </form>
@@ -74,19 +74,19 @@
                     <p class="hotel-detail">Zona: Passeig de Gracia</p>
                 </div>
                 <div class="booking-button">
-                  <form action="https://www.google.com/search" method="get">
+                  <form action="https://www.google.com/search" method="get" target="_blank">
                       <input type="hidden" name="q" value="Hotel Mandarin Oriental">
                       <button type="submit">Reservar</button>
                   </form>
               </div>
             </div>
           </div>
-        </section>
-        <aside class="right">
-          <h2>Cliente</h2>
+        </div>
+        <div class="right">
+          <h2>Client</h2>
           <form id="client-area-form">
               <div class="form-group">
-                  <label for="client-name">Nombre:</label>
+                  <label for="client-name">Nom:</label>
                   <input type="text" id="client-name" name="client_name" required>
               </div>
               <div class="form-group">
@@ -94,14 +94,14 @@
                   <input type="email" id="client-email" name="client_email" required>
               </div>
               <div class="form-group">
-                  <label for="client-password">Contraseña:</label>
+                  <label for="client-password">Contrasenya:</label>
                   <input type="password" id="client-password" name="client_password" required>
               </div>
               <button type="submit">Enviar</button>
           </form>
-        </aside>
+        </div>
         <footer class="footer">
-            <p>&copy; 2024 Reservas de Hoteles. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Reserves d'Hotels. Tots els drets reservats.</p>
         </footer>
     </div>
 </body>
