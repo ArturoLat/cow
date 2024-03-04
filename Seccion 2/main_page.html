@@ -79,55 +79,50 @@
                 </div>
             </form>
             <div class="hotel-listing">
-              <!-- Cambio de "hotel-entry" por bootstrap -->
               <div class="media mb-4 p-3 bg-white shadow-sm">
-                <a href="#" class="thumbnail">
-                  <img src="./static/images/hotel_vela.jpg" alt="Hotel W" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
-                
-                </a>
-        
-                <div class="media-body">
-                  <!-- Cambio de "hotel-info" por bootstrap -->
-                  <h5 class="mt-0">W Barcelona</h5>
-                  <p>Barcelona, España - Zona: Ciutat Vella</p>
-                  <form action="https://www.google.com/search" method="get" class="form-inline" target="_blank">
-                    <label for="personas-dropdown" class="mr-2">Persones:</label>
-                    <select class="custom-select mr-2" id="personas-dropdown">
-                        <option selected>0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4 o más</option>
-                    </select>
-                    <input type="hidden" name="q" value="W Barcelona">
-                    <button type="submit" class="btn btn-primary">Reservar</button>
-                  </form>
-                </div>
+                  <a href="#" class="thumbnail">
+                    <img src="./static/images/hotel_vela.jpg" alt="Hotel W" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
+                  </a>
+                  <div class="media-body">
+                      <h5 class="mt-0">W Barcelona</h5>
+                      <p>Barcelona, España - Zona: Ciutat Vella</p>
+                      <form action="./static/src/cliente.php" method="post" class="form-inline">
+                          <input type="hidden" name="ciudad" value="Barcelona, España">
+                          <input type="hidden" name="hotel" value="W Barcelona">
+                          <label for="personas-dropdown" class="mr-2">Personas:</label>
+                          <select class="custom-select mr-2" id="personas-dropdown" name="personas" required>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4 o más</option>
+                          </select>
+                          <button type="submit" class="btn btn-primary">Reservar</button>
+                      </form>
+                  </div>
               </div>
             </div>
             <div class="hotel-listing">
               <div class="media mb-4 p-3 bg-white shadow-sm">
-                <a href="#" class="thumbnail">
-                  <img src="./static/images/hotel_mandarin.jpg" alt="Hotel Mandarin Oriental" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
-                </a>
-                  <!-- Cambio de "hotel-entry" por bootstrap -->
-                <div class="media-body">
-                  <!-- Cambio de "hotel-info" por bootstrap -->
-                  <h5 class="mt-0">Hotel Mandarin Oriental</h5>
-                  <p>Barcelona, España - Zona: Passeig de Gracia</p>
-                  <form action="https://www.google.com/search" method="get" class="form-inline" target="_blank">
-                    <label for="personas-dropdown" class="mr-2">Persones:</label>
-                    <select class="custom-select mr-2" id="personas-dropdown" required>
-                        <option selected>0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4 o más</option>
-                    </select>
-                    <input type="hidden" name="q" value="Hotel Mandarin Oriental">
-                    <button type="submit" class="btn btn-primary">Reservar</button>
-                  </form>
-                </div>
+                  <a href="#" class="thumbnail">
+                      <img src="./static/images/hotel_mandarin.jpg" alt="Hotel Mandarin Oriental" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
+                  </a>
+                  <div class="media-body">
+                      <h5 class="mt-0">Hotel Mandarin Oriental</h5>
+                      <p>Barcelona, España - Zona: Passeig de Gracia</p>
+                      <form action="./static/src/cliente.php" method="post" class="form-inline">
+                          <input type="hidden" name="ciudad" value="Barcelona, España">
+                          <input type="hidden" name="hotel" value="Hotel Mandarin Oriental">
+                          <!-- Considera agregar un campo para seleccionar la fecha si es necesario -->
+                          <label for="personas-dropdown" class="mr-2">Personas:</label>
+                          <select class="custom-select mr-2" id="personas-dropdown" name="personas" required>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4 o más</option>
+                          </select>
+                          <button type="submit" class="btn btn-primary">Reservar</button>
+                      </form>
+                  </div>
               </div>
             </div>
         </section>
