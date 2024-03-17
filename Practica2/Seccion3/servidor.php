@@ -318,6 +318,13 @@
                         
                         if ($conn->query($insertSql) === TRUE) {
                           echo "<div class='alert alert-success' role='alert'>Nuevo estudiante registrado con éxito.";
+                          // Mostrar los datos introducidos
+                          echo "<h6 class=\"mt-0 d-inline-block\">Nombre:</h6> $nombre<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Email:</h6> $email<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Entrada:</h6> $fechaEntrada<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Salida:</h6> $fechaSalida<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Hotel Seleccionado:</h6> $hotelSeleccionado<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Zona Seleccionada:</h6> $zonaSeleccionada<br>";
                         } else {
                             echo "<div class='alert alert-danger' role='alert'>Error: " . $conn->error . "</div>";
                         }

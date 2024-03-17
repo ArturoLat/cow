@@ -152,7 +152,7 @@
                 if (!preg_match("/^[a-zA-Z ]*$/", $nombre)) {
                     $valido = false;
                     echo "<div class='alert alert-danger' role='alert'>";
-                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> Solo letras y espacios blancos permitidos en el nombre.<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> Unicament lletres i espais en blanc permessos en el nom<br>";
                     echo "</div>";
                 }
 
@@ -161,7 +161,7 @@
                 $salidaDateTime = new DateTime($fechaSalida);
                 if ($salidaDateTime <= $entradaDateTime) {
                     echo "<div class='alert alert-danger' role='alert'>";
-                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> La fecha de salida debe ser posterior a la fecha de entrada.<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> La sortida ha de ser posterior a l'entrada <br>";
                     echo "</div>";
                     $valido = false;
                 } 
