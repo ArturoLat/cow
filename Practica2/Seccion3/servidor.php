@@ -284,7 +284,7 @@
                         } else if ($row['name'] !== $nombre) {
                           // Nombre diferente, ofrecer actualizar el nombre
                           echo "<div class='alert alert-warning' role='alert'>";
-                          echo "El nombre associat es diferent. Vols actualitzar el nom a '$nombre'?";
+                          echo "El nom associat es diferent. Vols actualitzar el nom a '$nombre'?";
                           echo "<form method='post'>";
                           echo "<input type='hidden' name='email' value='$email'>";
                           echo "<input type='hidden' name='nombre_nuevo' value='$nombre'>";
