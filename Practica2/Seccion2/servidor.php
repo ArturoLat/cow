@@ -169,15 +169,15 @@
                 
                 // Si sigue pasando los ifs, muestra los datos introducidos
                 if ($valido) {
-                    echo "<h6 class=\"mt-0 d-inline-block\">Nombre:</h6><input type=\"hidden\" name=\"q\"> $nombre<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\">Nom:</h6><input type=\"hidden\" name=\"q\"> $nombre<br>";
                     echo "<br>";
                     echo "<h6 class=\"mt-0 d-inline-block\"> Email:</h6><input type=\"hidden\" name=\"q\"> $email<br>";
                     echo "<br>";
-                    echo "<h6 class=\"mt-0 d-inline-block\"> Fecha de Entrada:</h6><input type=\"hidden\" name=\"q\"> $fechaEntrada<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\"> Fecha d'Entrada:</h6><input type=\"hidden\" name=\"q\"> $fechaEntrada<br>";
                     echo "<br>";
-                    echo "<h6 class=\"mt-0 d-inline-block\"> Fecha de Salida:</h6><input type=\"hidden\" name=\"q\"> $fechaSalida<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\"> Fecha de Sortida:</h6><input type=\"hidden\" name=\"q\"> $fechaSalida<br>";
                     echo "<br>";
-                    echo "<h6 class=\"mt-0 d-inline-block\"> Hotel Seleccionado: </h6><input type=\"hidden\" name=\"q\"> $hotelSeleccionado<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\"> Hotel Seleccionat: </h6><input type=\"hidden\" name=\"q\"> $hotelSeleccionado<br>";
                     echo "<br>";
                 } else {
                 }

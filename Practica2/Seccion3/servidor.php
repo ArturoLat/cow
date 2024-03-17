@@ -164,7 +164,7 @@
                   if ($result->num_rows > 0) {
                     
                     echo "<h2 class='mt-0'>Top 15 Cities from $zonaSeleccionada</h2>";
-                    echo "<table class='table table-hover'><tr><th>Ranking</th><th>Nombre</th><th>Distrito</th><th>Población</th></tr>";
+                    echo "<table class='table table-hover'><tr><th>Ranking</th><th>Nom</th><th>Districte</th><th>Població</th></tr>";
                     $ranking = 1;
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr><td>".$ranking."</td><td>".$row["name"]."</td><td>".$row["district"]."</td><td>".$row["population"]."</td></tr>";
@@ -174,7 +174,7 @@
                    
                     
                   } else {
-                    echo "No se encontraron ciudades para la zona seleccionada.";
+                    echo "No s'han trobat ciutats per la zona seleccionada.";
                   }
 
                    
@@ -202,7 +202,7 @@
                 if (!preg_match("/^[a-zA-Z ]*$/", $nombre_nuevo)) {
                     $valido = false;
                     echo "<div class='alert alert-danger' role='alert'>";
-                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> Solo letras y espacios blancos permitidos en el nombre.<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> Unicament lletres i espais en blanc permessos en el nom.<br>";
                     echo "</div>";
                 }
               }else{
@@ -213,7 +213,7 @@
                 if (!preg_match("/^[a-zA-Z ]*$/", $nombre)) {
                     $valido = false;
                     echo "<div class='alert alert-danger' role='alert'>";
-                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> Solo letras y espacios blancos permitidos en el nombre.<br>";
+                    echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> Unicament lletres i espais en blanc permessos en el nom.<br>";
                     echo "</div>";
                 }
               }
@@ -232,7 +232,7 @@
               $salidaDateTime = new DateTime($fechaSalida);
               if ($salidaDateTime <= $entradaDateTime) {
                   echo "<div class='alert alert-danger' role='alert'>";
-                  echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> La fecha de salida debe ser posterior a la fecha de entrada.<br>";
+                  echo "<h6 class=\"mt-0 d-inline-block\"> Error: </h6> La sortida ha de ser posterior a l'entrada.<br>";
                   echo "</div>";
                   $valido = false;
               } 
@@ -248,7 +248,7 @@
                   $conn = new mysqli($servername, $username, $passwordDB, $dbname);
                   
                   if ($conn->connect_error) {
-                      die("Conexión fallida: " . $conn->connect_error);
+                      die("Conexió fallida: " . $conn->connect_error);
                   }
                   if(isset($_POST['actualizar_nombre'])){
                     $email = $_POST['email'];
@@ -257,16 +257,16 @@
                     // Actualizar el nombre en la base de datos
                     $updateSql = "UPDATE students SET name = '$nombre_nuevo' WHERE email = '$email'";
                     if ($conn->query($updateSql) === TRUE) {
-                        echo "<div class='alert alert-success' role='alert'>Nombre actualizado con éxito.</div>";
+                        echo "<div class='alert alert-success' role='alert'>Nom actualitzat amb exit.</div>";
                         // Mostrar los datos introducidos
-                        echo "<h6 class=\"mt-0 d-inline-block\">Nombre Nuevo:</h6> $nombre_nuevo<br>";
+                        echo "<h6 class=\"mt-0 d-inline-block\">Nou nom:</h6> $nombre_nuevo<br>";
                         echo "<h6 class=\"mt-0 d-inline-block\">Email:</h6> $email<br>";
-                        echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Entrada:</h6> $fechaEntrada<br>";
-                        echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Salida:</h6> $fechaSalida<br>";
-                        echo "<h6 class=\"mt-0 d-inline-block\">Hotel Seleccionado:</h6> $hotelSeleccionado<br>";
+                        echo "<h6 class=\"mt-0 d-inline-block\">Fecha d'Entrada:</h6> $fechaEntrada<br>";
+                        echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Sortida:</h6> $fechaSalida<br>";
+                        echo "<h6 class=\"mt-0 d-inline-block\">Hotel Seleccionat:</h6> $hotelSeleccionado<br>";
                         echo "<h6 class=\"mt-0 d-inline-block\">Zona Seleccionada:</h6> $zonaSeleccionada<br>";
                     } else {
-                        echo "<div class='alert alert-danger' role='alert'>Error al actualizar el nombre: " . $conn->error . "</div>";
+                        echo "<div class='alert alert-danger' role='alert'>Error al actualizar el nom: " . $conn->error . "</div>";
                     }
                   }else{
 
@@ -280,11 +280,11 @@
                         $row = $result->fetch_assoc();
                         if ($row['password'] !== $password) {
                           // Contraseña no coincide
-                          echo "<div class='alert alert-danger' role='alert'>No se ha iniciado sesión correctamente: contraseña incorrecta.</div>";
+                          echo "<div class='alert alert-danger' role='alert'>No s'ha iniciat sessio correctament: contrasenya incorrecta.</div>";
                         } else if ($row['name'] !== $nombre) {
                           // Nombre diferente, ofrecer actualizar el nombre
                           echo "<div class='alert alert-warning' role='alert'>";
-                          echo "El nombre asociado con este email es diferente. ¿Quieres actualizar tu nombre a '$nombre'?";
+                          echo "El nombre associat es diferent. Vols actualitzar el nom a '$nombre'?";
                           echo "<form method='post'>";
                           echo "<input type='hidden' name='email' value='$email'>";
                           echo "<input type='hidden' name='nombre_nuevo' value='$nombre'>";
@@ -294,18 +294,18 @@
                           echo "<input type='hidden' name='hotel_selector' value='$hotelSeleccionado'>";
                           echo "<input type='hidden' name='zone_selector' value='$zonaSeleccionada'>";
                           echo "<input type='hidden' name='actualizar_nombre' value='true'>";
-                          echo "<button type='submit' class='btn btn-primary'>Actualizar Nombre</button>";
+                          echo "<button type='submit' class='btn btn-primary'>Actualizar Nom</button>";
                           echo "</form>";
                           echo "</div>";
                         }else {
                           // Inicio de sesión correcto
-                          echo "<div class='alert alert-success' role='alert'>Inicio de sesión correcto.</div>";
+                          echo "<div class='alert alert-success' role='alert'>Inicio de sessió correcte.</div>";
                           // Mostrar los datos introducidos
-                          echo "<h6 class=\"mt-0 d-inline-block\">Nombre:</h6> $nombre<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Nom:</h6> $nombre<br>";
                           echo "<h6 class=\"mt-0 d-inline-block\">Email:</h6> $email<br>";
-                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Entrada:</h6> $fechaEntrada<br>";
-                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Salida:</h6> $fechaSalida<br>";
-                          echo "<h6 class=\"mt-0 d-inline-block\">Hotel Seleccionado:</h6> $hotelSeleccionado<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha d'Entrada:</h6> $fechaEntrada<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Sortida:</h6> $fechaSalida<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Hotel Seleccionat:</h6> $hotelSeleccionado<br>";
                           echo "<h6 class=\"mt-0 d-inline-block\">Zona Seleccionada:</h6> $zonaSeleccionada<br>";
                       }
                     } else {
@@ -317,13 +317,13 @@
                         $insertSql = "INSERT INTO students (id, name, email, password) VALUES ($nextId, '$nombre', '$email', '$password')";
                         
                         if ($conn->query($insertSql) === TRUE) {
-                          echo "<div class='alert alert-success' role='alert'>Nuevo estudiante registrado con éxito.";
+                          echo "<div class='alert alert-success' role='alert'>Nou estudiant registrat amb exit.";
                           // Mostrar los datos introducidos
-                          echo "<h6 class=\"mt-0 d-inline-block\">Nombre:</h6> $nombre<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Nom:</h6> $nombre<br>";
                           echo "<h6 class=\"mt-0 d-inline-block\">Email:</h6> $email<br>";
-                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Entrada:</h6> $fechaEntrada<br>";
-                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Salida:</h6> $fechaSalida<br>";
-                          echo "<h6 class=\"mt-0 d-inline-block\">Hotel Seleccionado:</h6> $hotelSeleccionado<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha d'Entrada:</h6> $fechaEntrada<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Fecha de Sortida:</h6> $fechaSalida<br>";
+                          echo "<h6 class=\"mt-0 d-inline-block\">Hotel Seleccionat:</h6> $hotelSeleccionado<br>";
                           echo "<h6 class=\"mt-0 d-inline-block\">Zona Seleccionada:</h6> $zonaSeleccionada<br>";
                         } else {
                             echo "<div class='alert alert-danger' role='alert'>Error: " . $conn->error . "</div>";
