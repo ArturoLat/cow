@@ -82,7 +82,7 @@
               <!-- Cambio de "hotel-entry" por bootstrap -->
               <div class="media mb-4 p-3 bg-white shadow-sm">
                 <a href="#" class="thumbnail">
-                  <img src="../images/hotel_vela.jpg" alt="Hotel W" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
+                  <img src="./static/images/hotel_vela.jpg" alt="Hotel W" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
                 
                 </a>
         
@@ -108,7 +108,7 @@
             <div class="hotel-listing">
               <div class="media mb-4 p-3 bg-white shadow-sm">
                 <a href="#" class="thumbnail">
-                  <img src="../images/hotel_mandarin.jpg" alt="Hotel Mandarin Oriental" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
+                  <img src="./static/images/hotel_mandarin.jpg" alt="Hotel Mandarin Oriental" class="mr-3 align-self-center img-fluid" style="width: 150px; height: auto; border-radius: 4px; margin-right: 15px;">
                 </a>
                   <!-- Cambio de "hotel-entry" por bootstrap -->
                 <div class="media-body">

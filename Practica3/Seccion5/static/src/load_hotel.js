@@ -2,18 +2,26 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('./static/src/hoteles.json')
     .then(response => response.json())
     .then(hoteles => {
-        const hotelList = document.querySelector('.hotel-listing');
+        const searchInput = document.getElementById('search-hotel');
         const hotelSelector = document.getElementById('hotel-selector');
+        const suggestionsContainer = document.getElementById('search-suggestions');
         renderHotels(hoteles);
         populateHotelSelector(hotelSelector, hoteles);
 
-        const searchInput = document.getElementById('search-hotel');
         searchInput.addEventListener('input', function() {
             const filteredHotels = hoteles.filter(hotel => 
                 hotel.nombre.toLowerCase().includes(this.value.toLowerCase()) ||
                 hotel.ciudad.toLowerCase().includes(this.value.toLowerCase())
             );
+            updateSuggestions(this.value, filteredHotels, suggestionsContainer);
             renderHotels(filteredHotels);
+        });
+
+        // Asegúrate de ocultar las sugerencias cuando se haga clic en cualquier lugar del documento
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target)) {
+                suggestionsContainer.style.display = 'none';
+            }
         });
     })
     .catch(error => {
@@ -71,6 +79,32 @@ function renderHotels(hoteles) {
         });
     });
 }
+
+
+function updateSuggestions(inputText, hoteles, suggestionsContainer) {
+    suggestionsContainer.innerHTML = '';
+    suggestionsContainer.style.display = 'none';
+
+    if (inputText.length > 0) {
+        // Mostrar sugerencias si hay coincidencias
+        if (hoteles.length > 0) {
+            hoteles.forEach(hotel => {
+                const suggestionButton = document.createElement('button');
+                suggestionButton.type = 'button';
+                suggestionButton.classList.add('suggestion-button', 'btn', 'btn-light', 'btn-block');
+                suggestionButton.textContent = `${hotel.nombre}, ${hotel.ciudad}`;
+                suggestionButton.addEventListener('click', () => {
+                    const searchInput = document.getElementById('search-hotel');
+                    searchInput.value = hotel.nombre;
+                    suggestionsContainer.style.display = 'none';
+                });
+                suggestionsContainer.appendChild(suggestionButton);
+            });
+            suggestionsContainer.style.display = 'block';
+        }
+    }
+}
+
 
 
 function populateHotelSelector(selector, hoteles) {
