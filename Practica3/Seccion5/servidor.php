@@ -110,8 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
         <!-- Cambio de "center" por bootstrap -->
         
         <section class="col-sm-12 col-md-6">
-          <h2>Busqueda d'Hotels</h2>
-          <input type="text" id="search-hotel" placeholder="Buscar hotel por nombre o ciudad" class="form-control mb-3">
+          <h2>Busqueda de Hoteles</h2>
+          <div class="autocomplete-container" style="position: relative;">
+            <input type="text" id="search-hotel" placeholder="Buscar hotel por nombre o ciudad" class="form-control mb-3">
+            <div id="search-suggestions" class="search-suggestions" style="display: none; position: absolute; background-color: #ffffff; border: 1px solid #d4d4d4; border-top: none; z-index: 99; width: 100%;"></div>
+          </div>
           <div class="hotel-listing"></div>
           <div class="cities-listing">
           <?php

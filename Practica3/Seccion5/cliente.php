@@ -140,6 +140,7 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="./static/src/validar_formulario_cliente.js"></script>
+  <script src="./static/src/dropdown_hotels.js"></script>
   <script src="./static/src/validar_email.js"></script>
   <script src="./static/src/load_hotel.js"></script>
   <script src="./static/src/dropdown_help.js"></script>

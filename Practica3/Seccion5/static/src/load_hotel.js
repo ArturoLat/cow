@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const hotelSelector = document.getElementById('hotel-selector');
         const suggestionsContainer = document.getElementById('search-suggestions');
         renderHotels(hoteles);
-        populateHotelSelector(hotelSelector, hoteles);
 
         searchInput.addEventListener('input', function() {
             const filteredHotels = hoteles.filter(hotel => 
@@ -97,22 +96,11 @@ function updateSuggestions(inputText, hoteles, suggestionsContainer) {
                     const searchInput = document.getElementById('search-hotel');
                     searchInput.value = hotel.nombre;
                     suggestionsContainer.style.display = 'none';
+                    renderHotels([hotel]);
                 });
                 suggestionsContainer.appendChild(suggestionButton);
             });
             suggestionsContainer.style.display = 'block';
         }
     }
-}
-
-
-
-function populateHotelSelector(selector, hoteles) {
-    selector.innerHTML = '';
-    hoteles.forEach(hotel => {
-        var option = document.createElement('option');
-        option.value = hotel.nombre;
-        option.textContent = hotel.nombre;
-        selector.appendChild(option);
-    });
 }
