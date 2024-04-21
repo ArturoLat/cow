@@ -32,7 +32,7 @@ document.observe('dom:loaded', function() {
             return false;
         } else {
             nombreInput.writeAttribute('aria-invalid', 'false');
-            ocultarError();
+            ocultarError()
             return true;
         }
     }
