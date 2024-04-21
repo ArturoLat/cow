@@ -12,22 +12,24 @@ function checkEmail() {
         return;
     }
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'servidor.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var response = JSON.parse(this.responseText);
-            if (response.exists) {
+    new Ajax.Request('servidor.php', {
+        method: 'post',
+        parameters: { action: 'checkEmail', email: email },
+        onSuccess: function(response) {
+            var jsonResponse = response.responseText.evalJSON();
+            if (jsonResponse.exists) {
                 errorDiv.innerHTML = 'Email is already registered.';
                 errorDiv.style.color = 'red'; // Red for error
             } else {
                 errorDiv.innerHTML = 'Email is available.';
                 errorDiv.style.color = 'green'; // Green for success
             }
+        },
+        onFailure: function() {
+            errorDiv.innerHTML = 'There was an error checking the email.';
+            errorDiv.style.color = 'red'; // Red for error
         }
-    };
-    xhr.send('action=checkEmail&email=' + encodeURIComponent(email));
+    });
 }
 
 function validateEmail(email) {

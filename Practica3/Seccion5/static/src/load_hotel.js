@@ -81,26 +81,30 @@ function renderHotels(hoteles) {
 
 
 function updateSuggestions(inputText, hoteles, suggestionsContainer) {
-    suggestionsContainer.innerHTML = '';
-    suggestionsContainer.style.display = 'none';
+    // Limpiar el contenedor de sugerencias
+    $(suggestionsContainer).update();
 
-    if (inputText.length > 0) {
-        // Mostrar sugerencias si hay coincidencias
-        if (hoteles.length > 0) {
-            hoteles.forEach(hotel => {
-                const suggestionButton = document.createElement('button');
-                suggestionButton.type = 'button';
-                suggestionButton.classList.add('suggestion-button', 'btn', 'btn-light', 'btn-block');
-                suggestionButton.textContent = `${hotel.nombre}, ${hotel.ciudad}`;
-                suggestionButton.addEventListener('click', () => {
-                    const searchInput = document.getElementById('search-hotel');
-                    searchInput.value = hotel.nombre;
-                    suggestionsContainer.style.display = 'none';
-                    renderHotels([hotel]);
-                });
-                suggestionsContainer.appendChild(suggestionButton);
+    if (inputText.length > 0 && hoteles.length > 0) {
+        // Mostrar el contenedor de sugerencias
+        $(suggestionsContainer).show();
+
+        hoteles.each(function(hotel) {
+            var suggestionButton = new Element('button', { 
+                type: 'button', 
+                'class': 'suggestion-button btn btn-light btn-block'
+            }).update(hotel.nombre + ', ' + hotel.ciudad);
+
+            suggestionButton.observe('click', function() {
+                $('search-hotel').setValue(hotel.nombre);
+                $(suggestionsContainer).hide();
+                renderHotels([hotel]);
             });
-            suggestionsContainer.style.display = 'block';
-        }
+
+            $(suggestionsContainer).insert({
+                bottom: suggestionButton
+            });
+        });
+    } else {
+        $(suggestionsContainer).hide();
     }
 }

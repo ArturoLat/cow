@@ -27,7 +27,7 @@ document.observe('dom:loaded', function() {
     function validarNombre() {
         var valorNombre = nombreInput.value;
         if (!/^[a-zA-Z ]*$/.test(valorNombre)) {
-            mostrarError("<div class='alert alert-danger' role='alert'> <h6 class=\"mt-0 d-inline-block\"> Error: </h6> Unicament lletres i espais en blanc permessos en el nom.<br></div>", salidaDateInput);
+            mostrarError("<div class='alert alert-danger' role='alert'> <h6 class=\"mt-0 d-inline-block\"> Error: </h6> Unicament lletres i espais en blanc permessos en el nom.<br></div>", nombreInput);
             nombreInput.writeAttribute('aria-invalid', 'true');
             return false;
         } else {
@@ -43,7 +43,7 @@ document.observe('dom:loaded', function() {
         var fechaSalida = new Date(salidaDateInput.value);
 
         if (fechaSalida <= fechaEntrada) {
-            mostrarError("<div class='alert alert-danger' role='alert'> <h6 class=\"mt-0 d-inline-block\"> Error: </h6> La sortida ha de ser posterior a l'entrada.<br></div>", nombreInput);
+            mostrarError("<div class='alert alert-danger' role='alert'> <h6 class=\"mt-0 d-inline-block\"> Error: </h6> La sortida ha de ser posterior a l'entrada.<br></div>", salidaDateInput);
             return false;
         }
         return true;
