@@ -314,7 +314,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
                           // Nombre diferente, ofrecer actualizar el nombre
                           echo "<div id='dialog-confirm' title='Confirmar actualización'>";
                           echo "<p><span class='ui-icon ui-icon-alert' style='float:left; margin:12px 12px 20px 0;'></span>";
-                          echo "El nombre en la cuenta es diferente. ¿Deseas actualizarlo con el nombre ingresado?</p>";
+                          echo "El nom de la conta es diferent. Vols actulitzar el nom de la conta?</p>";
                           echo "<form id='form-update-name' method='post'>";
                           echo "<input type='hidden' name='email' value='$email'>";
                           echo "<input type='hidden' name='nombre_nuevo' value='$nombre'>";
