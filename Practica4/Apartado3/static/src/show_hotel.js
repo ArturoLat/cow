@@ -19,9 +19,9 @@ $(document).ready(function() {
                     $('#hotel-table').hide().fadeIn(500); // Usa hide() para asegurar que la tabla está oculta antes de fadeIn
                 },
                 error: function(xhr, status, error) {
-                    console.error('Error cargando los hoteles:', error);
+                    console.error('Error carregant els hotels:', error);
                     console.error('Response was:', xhr.responseText);
-                    $('#hotel-table').html('<p>Error al cargar los hoteles. Por favor, intenta de nuevo.</p>').show().fadeOut(5000);
+                    $('#hotel-table').html('<p>Error al carregar els hotels.</p>').show().fadeOut(5000);
                 }
             });
         }
@@ -31,7 +31,7 @@ $(document).ready(function() {
 function displayHotels(hotels) {
     if (hotels.length === 0) {
         // Mensaje claro y directo para cuando no hay hoteles disponibles
-        $('#hotel-table').html('<p>No hay ningún hotel en la zona.</p>').show(); // Muestra el mensaje sin animación de desaparición
+        $('#hotel-table').html('<p>No hi ha cap hotel al pais indicat.</p>').show(); // Muestra el mensaje sin animación de desaparición
     } else {
         var tableHtml = '<table class="table"><thead><tr><th>Nombre</th><th>Ciudad</th></tr></thead><tbody>';
         hotels.forEach(function(hotel) {
@@ -41,4 +41,6 @@ function displayHotels(hotels) {
         $('#hotel-table').html(tableHtml);
     }
 }
+
+
 
