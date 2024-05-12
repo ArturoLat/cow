@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "W Barcelona",
+        "ciudad": "Barcelona",
+        "descripcion": "W Barcelona está en Barcelona y tiene restaurante, bicicletas gratis, una terraza solárium con piscina y desayuno buffet. Este hotel de 5 estrellas ofrece spa con piscina cubierta y centro de fitness. El alojamiento dispone de recepción 24 horas, traslado para ir o volver del aeropuerto, servicio de habitaciones y wifi gratis en todo el alojamiento.",
+        "imagen": "./static/images/hotel_vela.jpg"
+    },
+    {
+        "nombre": "Hotel Mandarin Oriental",
+        "ciudad": "Barcelona",
+        "descripcion": "Mandarin Oriental, Barcelona es un alojamiento muy bien situado en Barcelona que ofrece restaurante, centro de fitness y habitaciones con aire acondicionado. Ofrece jardín, terraza y bar. El alojamiento ofrece recepción 24 horas, servicio de habitaciones y cambio de moneda. Mandarin Oriental, Barcelona ofrece alojamiento de 5 estrellas con piscina cubierta y hammam.",
+        "imagen": "./static/images/hotel_mandarin.jpg"
+    },
+    {
+        "nombre": "Hotel Pestana CR7",
+        "ciudad": "Madrid",
+        "descripcion": "Un hotel que piensa en el viajero urbanita, el que quiere disfrutar de la ciudad y de su parte más vibrante y cosmopolita, pero el que también quiere encontrar un punto de desconexión y relax sin salir del hotel. El alojamiento dispone de terraza y es la única azotea con múltiples alturas y vistas de 360° a Madrid.",
+        "imagen": "./static/images/hotel_pestana_cr7.jpg"
+    },
+    {
+        "nombre": "The Ritz London",
+        "ciudad": "London",
+        "descripcion": "The Ritz is more than a hotel in Mayfair, it’s infused with rich British heritage and unparalleled 5 star service.",
+        "imagen": "./static/images/hotel_ritz_london.jpg"
+    }
+
+]

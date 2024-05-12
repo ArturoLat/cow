@@ -16,21 +16,22 @@ function checkEmail() {
     $.ajax({
         url: 'servidor.php',
         type: 'POST',
-        data: { action: 'showHotel', zone_selector: zone },
-        dataType: 'json',  // Asegúrate de especificar que esperas un JSON
+        data: { action: 'checkEmail', email: email },
         success: function(response) {
-            displayHotels(response);  // Si es JSON válido, jQuery lo parsea automáticamente
+            var jsonResponse = JSON.parse(response);
+            if (jsonResponse.exists) {
+                errorDiv.html('Email is already registered.').css('color', 'red');
+            } else {
+                errorDiv.html('Email is available.').css('color', 'green');
+            }
         },
-        error: function(xhr, status, error) {
-            console.error('Error cargando los hoteles:', error);
-            $('#hotel-table').html('<p>Error al cargar los hoteles. Verifique la consola para más detalles.</p>').css('color', 'red');
+        error: function() {
+            errorDiv.html('There was an error checking the email.').css('color', 'red');
         }
     });
-    
 }
 
 function validateEmail(email) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
-    
