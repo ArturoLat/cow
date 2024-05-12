@@ -33,7 +33,7 @@ function displayHotels(hotels) {
         // Mensaje claro y directo para cuando no hay hoteles disponibles
         $('#hotel-table').html('<p>No hi ha cap hotel al pais indicat.</p>').show(); // Muestra el mensaje sin animación de desaparición
     } else {
-        var tableHtml = '<table class="table"><thead><tr><th>Nombre</th><th>Ciudad</th></tr></thead><tbody>';
+        var tableHtml = '<table class="table"><thead><tr><th>Nom</th><th>Ciutat</th></tr></thead><tbody>';
         hotels.forEach(function(hotel) {
             tableHtml += `<tr><td>${hotel.nombre}</td><td>${hotel.ciudad}</td></tr>`;
         });

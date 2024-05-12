@@ -22,7 +22,7 @@ function checkEmail() {
             //Email existe
             if (exists === '1') {
                 var databaseName = $(responseXML).find('Name').text();
-                var tableHtml = '<table><tr><th>Email</th><th>&nbsp;</th><th>Nombre</th></tr>';
+                var tableHtml = '<table><tr><th>Email</th><th>&nbsp;</th><th>Nom</th></tr>';
                 tableHtml += '<tr><td>' + email + '</td><td>&nbsp;</td><td>' + databaseName + '</td></tr></table>';
                 errorDiv.html(tableHtml).css('color', 'black').fadeIn(); 
             } else {

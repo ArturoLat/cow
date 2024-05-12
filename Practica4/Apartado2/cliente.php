@@ -130,7 +130,7 @@
               </select>
             </div>
             <div class="buttons mb-3">
-              <button type="button" id="show-hotels" class="btn btn-info mr-3">Mostrar Hoteles</button>
+              <button type="button" id="show-hotels" class="btn btn-info mr-3">Mostrar Hotels</button>
               <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
             <div id="hotel-table"></div>
