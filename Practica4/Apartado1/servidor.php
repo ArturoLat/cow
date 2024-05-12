@@ -260,6 +260,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
                           echo "<input type='hidden' name='actualizar_nombre' value='true'>";
                           echo "</form>";
                           echo "</div>";
+                                            
                         }else {
                           // Inicio de sesión correcto
                           echo "<div class='alert alert-success' role='alert'>Inicio de sessió correcte.</div>";

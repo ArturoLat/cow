@@ -12,6 +12,7 @@ $(document).ready(function() {
             },
             Cancelar: function() {
                 $(this).dialog('close');
+                window.location.href = 'cliente.php'; // Redirigir a cliente.php
             }
         }
     });
