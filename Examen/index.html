@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="./static/images/logo_ub.jpg">
+  <title>UB Booking</title>
+  
+  <script type="text/javascript" src="./scriptaculous-js-1.9.0/lib/prototype.js"></script>
+  <script type="text/javascript" src="./scriptaculous-js-1.9.0/src/scriptaculous.js"></script>
+  <link href="./jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+  <script src="./jquery_3_4_0/jquery-3.4.0.min.js"></script>
+  <link href="./bootstrap-4.3.1_v2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+  <!-- Cambio de "main-body" por bootstrap -->
+  <div class="container-fluid">
+    <!-- Cambio de "header" por bootstrap -->
+    <!-- PY: Padding en Y | MB: Margen Botton -->
+    <header class="col-sm-12 text-center bg-dark text-white py-3 mb-3">
+        <h1>EXAMEN ARTURO LATORRE</h1>
+    </header>
+    <div class="row">
+      <!-- Cambio de "left" por bootstrap -->
+        <aside class="col-sm-12 col-md-3 mb-3">
+            
+        </aside>
+        <!-- Cambio de "center" por bootstrap -->
+        <section class="col-sm-12 col-md-6">
+          <h2>Formulario Cliente</h2>
+          <form id="client-area-form">
+            <div class="form-group">
+              <label for="minombre">Nom:</label>
+              <input type="text" id="minombre" name="minombre" class="form-control" placeholder="Introduce tu nombre" required onkeyup="checkName()">
+              <small id="minombre-help" class="form-text text-muted">Solament lletres i espais en blanc.</small>
+              
+              <div id="minombre-error"></div>
+            
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Introduce tu email" required onkeyup="checkEmail()">
+              <div id="email-error"></div>
+            </div>
+          </form>
+        </section>
+
+        <!-- Cambio de "right" por bootstrap -->
+        <aside class="col-sm-12 col-md-3 mb-3">
+        </aside>
+    </div>
+    <!-- Cambio de "footer" por bootstrap -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2024 Reserves d'Hotels. Tots els drets reservats.</p>
+    </footer>
+      
+  </div>
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="./static/src/validar_email.js"></script>
+</body>
+</html>
